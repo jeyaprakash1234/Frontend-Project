@@ -1,0 +1,380 @@
+body {
+  
+  background-color: none;
+    background : linear-gradient(to right,#1f3c2245, rgba(7, 119, 31, 0.116));
+  font-family: Arial, sans-serif;
+  color:#0e0d0d;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-size: cover;
+  
+}
+
+
+
+.welcome-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #007bff;
+  text-align: center;
+  animation: move 3s infinite alternate;
+  text-shadow: 2px 2px 4px rgba(39, 35, 35, 0.2);
+}
+
+@keyframes move {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(20px);
+  }
+}
+
+
+
+
+
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: auto;
+    /* background-color: #333; */
+    background: transparent;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .menu-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+   
+   background-color: #444;
+    position: absolute;
+    top: 100%;
+    right: 0; /* Change to right */
+    width: 150px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0;
+  }
+  
+  .menu-links a:hover {
+    background-color: #555;
+  }
+  
+  .Navbar {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6a5acd !important;
+    text-transform: uppercase;
+  }
+  
+  .navbar-brand .logo {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+   /* .nav-link{
+    width: 120px;
+    height: 42px;
+   
+    justify-content: space-evenly;
+    outline: none;
+    border: 1px solid #909090;
+    border-radius: 90px;
+    color: #ffff;
+    font-size: 20px;
+    font-weight: 500;
+    background: transparent ;
+    cursor: pointer;
+    gap:50px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-transform: uppercase;
+  
+  } */
+  @media (max-width:800px){
+    .navbar-nav  .nav-link{
+    
+    width: 55px;
+    height: 10px;
+  
+    
+    outline: none;
+    border: none;
+    border-radius: none;
+    color: #514e4e;
+    font-size: 10px;
+    font-weight: bold;
+    background: transparent ;
+    display: flex;
+    text-align: center;
+  
+  
+     
+    
+  
+  
+  
+    }
+  
+  
+  
+  }
+  
+   /* .nav-link:hover{
+   
+    
+    transform: scale(1.1);
+    color: #007bff; 
+    
+   }
+     */
+  
+  .jos{
+    color: #000000;
+  }
+  .jpjo{
+    color: #0056b3;
+  }
+  
+  
+  @media (max-width: 767px) {
+    .Navbar-brand img {
+      width: 100px;
+    }
+  
+    /* .Navbar-nav {
+      margin-left: 0;
+      text-align: center;
+    }
+     */
+  }
+  
+  .form-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 252, 252, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .form-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #5b5050;
+  } 
+  
+  .error-message {
+    color: red;
+    font-size: 0.875rem;
+  }
+  
+  .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+   
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+  
+  .service-card, .offer-card, .review-card {
+    border: none;
+    background-color: rgba(206, 204, 204, 0.59);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .service-card img, .offer-card img, .review-card img {
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .service-card .card-body, .offer-card .card-body, .review-card .card-body {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .service-card .card-title, .offer-card, .card-title, .review-card .card-title {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+   .card-text,.card-text .card-text {
+    font-size: 1rem;
+    color: #4a4545;
+  }
+  .review-card{
+    background: transparent;
+    
+  }
+  .card-title{
+    color: black;
+  }
+  
+  
+  .review-card img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 20px auto;
+  }
+  
+  .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  h1, h2 {
+    color: #100e0e;
+    margin-bottom: 30px;
+  }
+  
+  h3 {
+    color: #5a5656;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  
+  
+  
+  
+  
+  .jo{
+    color: rgb(64, 58, 58);
+  }
+  .jp{
+    color: #ffffff35;
+  }
+  @media (max-width: 767px) {
+    .jo,.offer-card ,.card-text,.card-title,.service-card{
+      color: #000000;
+    }
+    .jpjo,.text-center{
+      color: #0056b3;
+    }
+    
+  }
+  @media (max-width: 767px) {
+    .welcome-text,.carousel-image{
+      width: 90%;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .service-card {
+      width: 45%;
+    }
+  }
+  @media (max-width: 767px) {
+    .jo{
+      width: 90%;
+    }
+  }
+  .carousel-image{
+    margin: 20px;
+  }
+  
+  
+  .review-card:hover {
+    transform: scale(1.05); /* Slightly increase size */
+    box-shadow: 0 8px 14px #14131360; /* Enhance shadow */
+  }
+  
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #ffffff; 
+    padding: 20px 0px; 
+  }
+  @media (max-width: 767px) {
+    .register-form-container{
+      background-size: cover;
+      
+    }
+
+    .register-form {
+      width: 80%;
+     
+     
+    }
+  }
+  
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .register-form-container {
+      background-size: cover;
+      width: 90%;
+    }
+  
+    
+  }

@@ -1,0 +1,233 @@
+
+
+
+.services-container {
+    padding: 50px;
+    background-colo: white;
+  }
+.service-card,.offer-card {
+    /* height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    background-color: none;
+    border: 1px solid #4c694c;
+    border-radius: 8px;
+    margin: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly below */
+    animation: fadeInUp 0.5s ease forwards; /* Animation */
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+ 
+ 
+}
+
+.service-card img ,.offer-card img {
+    /* height: 200px; 
+    object-fit: cover; */
+    width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 200px;
+  object-fit: cover;
+  
+}
+.services.blurred {
+  filter: blur(5px);
+}
+
+.service-card .card-body , .offer-card .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.card-title {
+    /* font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px; */
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #dcdcdc;
+  
+}
+.services-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5em;
+    color: #4d4a4a;
+  }
+
+.card-text {
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.service-card .btn ,.offer-card .btn {
+    align-self: flex-end;
+}
+
+.service-card:hover {
+  transform: scale(1.05); /* Slightly increase size */
+  box-shadow: 0 10px 20px #14131360; /* Enhance shadow */
+}
+
+
+
+.service-description {
+    font-size: 1em;
+    margin: 10px 20px;
+    color: #f4f1f1;
+  }
+  
+  .service-price {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #f6f7f6;
+  } 
+
+  .book-button {
+    background-color: #6a5acd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .book-button:hover {
+    background-color: #5a4cb0;
+  }
+
+
+.booking-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.booking-form h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.submit-button {
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #5a4cb0;
+}
+
+.close-button {
+  background-color: #ccc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.close-button:hover {
+  background-color: #999;
+}
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* .service-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 14px #dbcbcbe5; 
+  }
+   */
+  
+  
+  @media (max-width: 767px) {
+    .service-card,.offer-card {
+      width: 90%;
+    }
+    .offer-card, .service-card:hover {
+      transform: scale(1.05); /* Slightly increase size */
+      box-shadow: 0 8px 14px #000000d3; /* Enhance shadow */
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .service-card ,.offer-card {
+      width: 70%;
+      
+
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .booking-form {
+      background-size: cover;
+    }
+  
+    .booking-form {
+      width: 90%;
+    }
+  }
+  
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .booking-form {
+      background-size: cover;
+    }
+  
+    .booking-form {
+      width: 80%;
+    }
+  }
