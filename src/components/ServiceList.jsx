@@ -41,7 +41,7 @@ function ServiceList() {
       e.preventDefault();
       const newBooking = { name,  phone, service ,pincode,address};
       try {
-        await axios.post('http://localhost:5000/api/booking/bookingdata', newBooking);
+        await axios.post('https://backend-project-2-cbk8.onrender.com/booking/bookingdata', newBooking);
         alert('Booking successful!');
         setName('');
         setPincode('');

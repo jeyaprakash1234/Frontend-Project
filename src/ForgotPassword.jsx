@@ -28,7 +28,7 @@ function ForgotPassword  () {
       e.preventDefault();
 
       try {
-        const response = await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+        const response = await axios.post('https://backend-project-2-cbk8.onrender.com/api/auth/forgot-password', { email });
         if(response.status === 200  ) {
             navigate('/login')
             

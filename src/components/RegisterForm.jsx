@@ -29,7 +29,7 @@ function RegisterForm  ()  {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', { name, email, password });
+      const response = await axios.post('https://backend-project-2-cbk8.onrender.com/api/auth/register', { name, email, password });
       if(response.status === 200  ) {
         navigate('/')
         alert('Register successfully')
