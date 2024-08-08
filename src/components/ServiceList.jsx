@@ -51,15 +51,7 @@ function ServiceList() {
       e.preventDefault();
       const newBooking = { name,  phone, service,time,date ,pincode,address};
       try {
-        await axios.post('https://backend-project-2-cbk8.onrender.com/booking/bookingdata', newBooking);
-       
-        Swal.fire({
-          title: "Good job!",
-          text: "You clicked the button!",
-          icon: "success"
-        });
-
-        navigate('/services');
+        await axios.post('https://backend-project-2-cbk8.onrender.com/api/booking/bookingdata', newBooking);
         setName('');
         setPincode('');
         setTime('');
@@ -67,6 +59,14 @@ function ServiceList() {
         setPhone('');
         setAddress('');
         setService('');
+
+        Swal.fire({
+          title: "Good job!",
+          text: "You clicked the button!",
+          icon: "success"
+        });
+
+        navigate('/services');
         
       } catch (err) {
         toast.error('Error creating booking');
