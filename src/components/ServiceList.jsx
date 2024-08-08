@@ -9,10 +9,11 @@ import stitchings from  '../assets/images/stitchings.jpg';
 import house from '../assets/images/housekeeping.jpg';
 import Menu from './Menu';
 import { useNavigate } from 'react-router-dom';
-import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
+
 import axios from 'axios';
+import Swal from 'sweetalert2';
 // import { useNavigate } from 'react-router-dom';
 
 function ServiceList() {
@@ -52,6 +53,7 @@ function ServiceList() {
       try {
         await axios.post('https://backend-project-2-cbk8.onrender.com/booking/bookingdata', newBooking);
         alert('Booking successful!');
+        
         navigate('/services');
         setName('');
         setPincode('');
@@ -65,6 +67,17 @@ function ServiceList() {
         toast.error('Error creating booking');
       }
     };
+
+    //sweetalert
+    const handleClick = ()=>{
+       
+      Swal.fire({
+        title: "Good job!",
+        text: "You clicked the button!",
+        icon: "success"
+      });
+      
+    }
    
     
     
@@ -129,6 +142,7 @@ function ServiceList() {
         }
     ];
 
+    /// searchbar
     const [searchQuery, setSearchQuery] = useState('');
 
     const handleSearchChange = (e) => {
@@ -138,7 +152,10 @@ function ServiceList() {
     const filteredServices = services.filter((service) =>
       service.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
+    
+    // sweetalert
 
+   
 
 
     return (
@@ -230,7 +247,7 @@ function ServiceList() {
               <label htmlFor="time">Time</label>
               <input type="text" id="time" name="time" value={time} onChange={(e)=>setTime(e.target.value)}required />
             </div>
-            <button type="submit" className="submit-button">Submit</button>
+            <button type="submit" className="submit-button" onClick={handleClick}>Submit</button>
             <button type="button" className="close-button" onClick={handleCloseForm}>Close</button>
           </form>
         </div>

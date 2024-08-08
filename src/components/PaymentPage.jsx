@@ -1,60 +1,59 @@
-// import React, { useState } from 'react'
-
-// function PaymentPage () {
-
-//   const [amout, setAmount]= useState('')
-//   return (
-//     <div className='PaymentPage'>
-
-//       <h2>Razorpay Payment </h2>
-
-//     </div>
-//   )
-// }
-
-// export default PaymentPage
+import React, { useState } from 'react'
 
 
-// src/components/Payment.js
-import React from 'react';
-import './payment.css'; // Import the CSS file
+function PaymentPage () {
 
-const PaymentPage = () => {
-  const handlePayment = async () => {
-    const response = await fetch('/api/create-order', { method: 'POST' });
-    const { orderId, currency, amount } = await response.json();
 
-    const options = {
-      key: 'YOUR_RAZORPAY_KEY_ID', // Enter the Key ID generated from the Razorpay Dashboard
-      amount: amount * 100, // Amount is in currency subunits. Default currency is INR.
-      currency: currency,
-      name: 'Your Company Name',
-      description: 'Test Transaction',
-      order_id: orderId,
-      handler: function (response) {
-        // Handle the response from Razorpay
-        console.log('Payment Successful', response);
-        // Optionally send payment details to the server for verification
-      },
-      prefill: {
-        name: 'Customer Name',
-        email: 'customer@example.com',
-        contact: '9999999999',
-      },
-      theme: {
-        color: '#3399cc',
-      },
-    };
+  const [amount, setAmount]= useState('')
 
-    const paymentObject = new window.Razorpay(options);
-    paymentObject.open();
-  };
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    if(amount ===""){
+      alert('please enter amount');
+    }else{
+      var options ={
+        key:"",
+        key_secret:"",
+        amount:amount*100,
+        currency:"INR",
+        name:"laundry payment",
+        description:"for testing purpose",
+        handler: function(response){
+          alert(response.razorpay_payment_id);
 
+        },
+        prefill:{
+          name:"jeyaprakash",
+          email:"hhtfcjp@gamil.com",
+          contact:"1234567891"
+        },
+        notes:{
+          address:"Razorpay Corporate office"
+        },
+        theme:{
+        color:"#fff"
+        }
+      
+      };
+      var pay= new window.Razorpay(options);
+      pay.open();
+
+    }
+
+
+  }
   return (
-    <div className="payment-container">
-      <button className="payment-button" onClick={handlePayment}>Pay Now</button>
-    </div>
-  );
-};
+    <div className='PaymentPage'>
 
-export default PaymentPage;
+      <h2>Razorpay Payment </h2>
+      <br />
+      <input type ="text"placeholder='Enter Amount' value={amount} onChange={(e)=>setAmount(e.target.value)}/>
+      <br /> <br />
+      <button onClick={handleSubmit}> Pay
+
+      </button>
+ </div>
+  )
+}
+
+export default PaymentPage
