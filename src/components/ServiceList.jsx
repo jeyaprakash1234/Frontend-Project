@@ -9,6 +9,8 @@ import stitchings from  '../assets/images/stitchings.jpg';
 import house from '../assets/images/housekeeping.jpg';
 import Menu from './Menu';
 import { useNavigate } from 'react-router-dom';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
@@ -36,21 +38,29 @@ function ServiceList() {
     const [address, setAddress] = useState('');
     const [name, setName] = useState('');
     const [pincode , setPincode ] = useState('');
-
+    const [date , setDate]=useState('');
+    const [time, setTime] =useState('');
+    
+      
+    
      const navigate = useNavigate();    
+
   
     const handleSubmit = async (e) => {
       e.preventDefault();
-      const newBooking = { name,  phone, service ,pincode,address};
+      const newBooking = { name,  phone, service,time,date ,pincode,address};
       try {
         await axios.post('https://backend-project-2-cbk8.onrender.com/booking/bookingdata', newBooking);
         alert('Booking successful!');
+        navigate('/services');
         setName('');
         setPincode('');
+        setTime('');
+        setDate('');
         setPhone('');
         setAddress('');
         setService('');
-        navigate('/services');
+        
       } catch (err) {
         toast.error('Error creating booking');
       }
@@ -212,6 +222,14 @@ function ServiceList() {
               <label htmlFor="pincode">Pincode</label>
               <input type="text" id="pincode" name="pincode" value={pincode} onChange={(e)=>setPincode(e.target.value)}required />
             </div>
+            <div className="form-group">
+              <label htmlFor="date">Date</label>
+              <input type="text" id="date" name="date" value={date} onChange={(e)=>setDate(e.target.value)}required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="time">Time</label>
+              <input type="text" id="time" name="time" value={time} onChange={(e)=>setTime(e.target.value)}required />
+            </div>
             <button type="submit" className="submit-button">Submit</button>
             <button type="button" className="close-button" onClick={handleCloseForm}>Close</button>
           </form>
@@ -224,6 +242,6 @@ function ServiceList() {
         </Container>
 
     );
-}
+};
 
 export default ServiceList;
