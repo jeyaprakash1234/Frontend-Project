@@ -141,7 +141,7 @@ const [searchTerm, setSearchTerm] = useState("");
                     return service;
 
                   }else if (service.title.toLowerCase().includes(searchTerm.toLowerCase())){
-                    return val;
+                    return service;
                   }
                 })
                 
