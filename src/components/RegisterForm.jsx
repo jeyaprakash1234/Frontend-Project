@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './RegisterForm.css';
 
 import Menu from './Menu';
+import Swal from 'sweetalert2';
 
 
 // const registerBackground = require('../assets/images/laundry-register-bg.jpg');
