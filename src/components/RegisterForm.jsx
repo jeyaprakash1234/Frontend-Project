@@ -31,8 +31,13 @@ function RegisterForm  ()  {
     try {
       const response = await axios.post('https://backend-project-2-cbk8.onrender.com/api/auth/register', { name, email, password });
       if(response.status === 200  ) {
+        Swal.fire({
+            title: "Good job!",
+            text: "Register successfully!",
+            icon: "success"
+          });
         navigate('/')
-        alert('Register successfully')
+
         
       } else{
         console.log("error");

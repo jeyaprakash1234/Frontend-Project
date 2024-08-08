@@ -30,13 +30,13 @@ function LoginForm  () {
       try {
         const response = await axios.post('https://backend-project-2-cbk8.onrender.com/api/auth/login', { email, password });
         if(response.status === 200  ) {
-            navigate('/')
+           
             Swal.fire({
                 title: "Good job!",
-                text: "You clicked the button!",
+                text: "Login successfully!",
                 icon: "success"
               });
-         
+              navigate('/')
          
         } else {
           alert(response.data.Error);

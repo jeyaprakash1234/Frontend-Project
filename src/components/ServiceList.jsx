@@ -62,7 +62,7 @@ function ServiceList() {
 
         Swal.fire({
           title: "Good job!",
-          text: "You clicked the button!",
+          text: "Booking successfully!",
           icon: "success"
         });
 
