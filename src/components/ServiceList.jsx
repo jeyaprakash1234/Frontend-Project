@@ -136,12 +136,12 @@ const [searchTerm, setSearchTerm] = useState("");
             <div className="template">
               {
                 services 
-                .filter((service)=>{
+                .filter((services)=>{
                   if(searchTerm == ""){
-                    return service;
+                    return services;
 
-                  }else if (service.title.toLowerCase().includes(searchTerm.toLowerCase())){
-                    return service;
+                  }else if (services.title.toLowerCase().includes(searchTerm.toLowerCase())){
+                    return services;
                   }
                 })
                 
