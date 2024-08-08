@@ -14,6 +14,8 @@ import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
 
 function ServiceList() {
+
+  
   
 
     const [showBookingForm, setShowBookingForm] = useState(false);
@@ -117,11 +119,36 @@ function ServiceList() {
         }
     ];
 
+const [searchTerm, setSearchTerm] = useState("");
+
+
+
     return (
        
         <Container >
             <ToastContainer/>
             <Menu/>
+            <div className="searchinpu">
+             <input id="serachInput" type="text" placeholder="Search here..."  onChange={(event)=>{
+              setSearchTerm(event.target.value);
+             }}/>
+            </div>
+            <div className="template">
+              {
+                services 
+                .filter((service)=>{
+                  if(searchTerm == ""){
+                    return service;
+
+                  }else if (service.title.toLowerCase().includes(searchTerm.toLowerCase())){
+                    return val;
+                  }
+                })
+                
+
+
+              }
+            </div>
             <div className={`services ${showBookingForm ? 'blurred' : ''}`}> 
             <h2 className="text-center my-5">Our Services</h2>
             <Row>
