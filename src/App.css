@@ -387,10 +387,10 @@ body {
   }
   
   .search-bar input {
-    width: 50%;
+    width: 100%;
     justify-content: center;
-    /* padding: 10px;
-    margin-right: 40px; */
+    padding: 10px 20px;
+    margin-right: 40px; 
     border: 1px solid #ccc;
     border-radius: 4px;
   }
