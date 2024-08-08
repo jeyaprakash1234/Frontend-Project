@@ -1,104 +1,59 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './payment.css';
+// import React, { useState } from 'react'
+
+// function PaymentPage () {
+
+//   const [amout, setAmount]= useState('')
+//   return (
+//     <div className='PaymentPage'>
+
+//       <h2>Razorpay Payment </h2>
+
+//     </div>
+//   )
+// }
+
+// export default PaymentPage
+
+
+// src/components/Payment.js
+import React from 'react';
+import './payment.css'; // Import the CSS file
 
 const PaymentPage = () => {
-  const [formData, setFormData] = useState({
-    cardNumber: '',
-    cardName: '',
-    expiryDate: '',
-    cvv: ''
-  });
+  const handlePayment = async () => {
+    const response = await fetch('/api/create-order', { method: 'POST' });
+    const { orderId, currency, amount } = await response.json();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
+    const options = {
+      key: 'YOUR_RAZORPAY_KEY_ID', // Enter the Key ID generated from the Razorpay Dashboard
+      amount: amount * 100, // Amount is in currency subunits. Default currency is INR.
+      currency: currency,
+      name: 'Your Company Name',
+      description: 'Test Transaction',
+      order_id: orderId,
+      handler: function (response) {
+        // Handle the response from Razorpay
+        console.log('Payment Successful', response);
+        // Optionally send payment details to the server for verification
+      },
+      prefill: {
+        name: 'Customer Name',
+        email: 'customer@example.com',
+        contact: '9999999999',
+      },
+      theme: {
+        color: '#3399cc',
+      },
+    };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    alert('Payment details submitted!');
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
   };
 
   return (
-    <Container className="mt-5">
-      <Row className="justify-content-center">
-        <Col md={6}>
-          <Card>
-            <Card.Body>
-              <Card.Title className="text-center mb-4">Payment</Card.Title>
-              <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="formCardNumber">
-                  <Form.Label>Card Number</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="cardNumber"
-                    value={formData.cardNumber}
-                    onChange={handleChange}
-                    placeholder="Enter your card number"
-                    required
-                  />
-                </Form.Group>
-
-                <Form.Group controlId="formCardName">
-                  <Form.Label>Cardholder Name</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="cardName"
-                    value={formData.cardName}
-                    onChange={handleChange}
-                    placeholder="Enter cardholder name"
-                    required
-                  />
-                </Form.Group>
-
-                <Row>
-                  <Col md={6}>
-                    <Form.Group controlId="formExpiryDate">
-                      <Form.Label>Expiry Date</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="expiryDate"
-                        value={formData.expiryDate}
-                        onChange={handleChange}
-                        placeholder="MM/YY"
-                        required
-                      />
-                    </Form.Group>
-                  </Col>
-                  <Col md={6}>
-                    <Form.Group controlId="formCvv">
-                      <Form.Label>CVV</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="cvv"
-                        value={formData.cvv}
-                        onChange={handleChange}
-                        placeholder="CVV"
-                        required
-                      />
-                    </Form.Group>
-                  </Col>
-                </Row>
-
-                <Form.Text className="form-text mt-3 d-block">
-                  <strong>Important:</strong> This payment method is card only. Please ensure the work is completed before making a payment through the website or by cash in hand.
-                </Form.Text>
-
-                <Button variant="primarys" type="submit" className="w-100 mt-3">
-                  Submit Payment
-                </Button>
-              </Form>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+    <div className="payment-container">
+      <button className="payment-button" onClick={handlePayment}>Pay Now</button>
+    </div>
   );
 };
 

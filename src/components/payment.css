@@ -1,4 +1,4 @@
-/* PaymentPage.css */
+PaymentPage.css
 
 /* General Styles */
 .card {
@@ -119,3 +119,31 @@
     }
   }
   
+
+  /* src/components/Payment.css */
+.payment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.payment-button {
+  background-color: #3399cc;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.payment-button:hover {
+  background-color: #2874a6;
+}
+
+.payment-button:active {
+  background-color: #1c6ea4;
+}
