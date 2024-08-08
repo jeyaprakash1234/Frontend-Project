@@ -119,7 +119,15 @@ function ServiceList() {
         }
     ];
 
-const [searchTerm, setSearchTerm] = useState("");
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const handleSearchChange = (e) => {
+      setSearchQuery(e.target.value);
+    };
+  
+    const filteredServices = services.filter((service) =>
+      service.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
 
 
@@ -128,31 +136,15 @@ const [searchTerm, setSearchTerm] = useState("");
         <Container >
             <ToastContainer/>
             <Menu/>
-            <div className="searchinpu">
-             <input id="serachInput" type="text" placeholder="Search here..."  onChange={(event)=>{
-              setSearchTerm(event.target.value);
-             }}/>
-            </div>
-            <div className="template">
-              {
-                services 
-                .filter((services)=>{
-                  if(searchTerm == ""){
-                    return services;
-
-                  }else if (services.title.toLowerCase().includes(searchTerm.toLowerCase())){
-                    return services;
-                  }
-                })
-                
-
-
-              }
-            </div>
+            
             <div className={`services ${showBookingForm ? 'blurred' : ''}`}> 
+            
             <h2 className="text-center my-5">Our Services</h2>
+           
+             <input  type="text" placeholder="Search here..." value={searchQuery} onChange={handleSearchChange} className='search-bar'/>
+        
             <Row>
-                {services.map((service, index) => (
+                {filteredServices.map((service, index) => (
                     <Col md={4} key={index} className="mb-4">
                         <Card className="service-card">
                             <Card.Img variant="top" src={service.image} />
