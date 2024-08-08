@@ -140,9 +140,9 @@ function ServiceList() {
             <div className={`services ${showBookingForm ? 'blurred' : ''}`}> 
             
             <h2 className="text-center my-5">Our Services</h2>
-           
+           <div className="search-bar">
              <input  type="text" placeholder="Search here..." value={searchQuery} onChange={handleSearchChange} className='search-bar'/>
-        
+             </div>
             <Row>
                 {filteredServices.map((service, index) => (
                     <Col md={4} key={index} className="mb-4">
