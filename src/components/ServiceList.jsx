@@ -53,7 +53,7 @@ function ServiceList() {
       try {
         await axios.post('https://backend-project-2-cbk8.onrender.com/booking/bookingdata', newBooking);
         alert('Booking successful!');
-        
+
         navigate('/services');
         setName('');
         setPincode('');
@@ -153,7 +153,7 @@ function ServiceList() {
       service.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
     
-    // sweetalert
+
 
    
 
