@@ -1,149 +1,157 @@
-PaymentPage.css
 
-/* General Styles */
-.card {
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+.payment {
+  padding: 2rem;
+}
+
+.Payment-title {
+  color: #343a40;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.Payment2 {
+  margin-bottom: 1.5rem;
+}
+
+.Payment-focus {
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+}
+
+.Payment-focus:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+.Payment-button {
+  background-color: #28a745;
+  border-color: #28a745;
+  border-radius: 10px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.Payment-button:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+
+
+/* Price Details Styles */
+#formPrice,
+#formDiscount,
+#formFinalPrice {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #495057;
+  margin-top: 10px;
+}
+
+#formFinalPrice {
+  color: #28a745;
+}
+
+
+
+#formHousekeepingHours {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+#formHousekeepingHours .form-control {
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  padding: 0.75rem 1.25rem;
+}
+
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .payment {
+    padding: 1.5rem;
   }
-  
-  .card-body {
-    padding: 2rem;
-  }
-  
-  .card-title {
-    color: #343a40;
-    font-weight: bold;
-  }
-  
-  .form-control {
-    border-radius: 10px;
-    border: 1px solid #ced4da;
-    padding: 0.75rem 1.25rem;
-  }
-  
-  .form-control:focus {
-    border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
-  }
-  
-  .btn-primarys {
-    background-color: #28a745;
-    border-color: #28a745;
-    border-radius: 10px;
-    padding: 0.75rem 1.25rem;
-  }
-  
-  .btn-primarys:hover {
-    background-color: #218838;
-    border-color: #1e7e34;
-  }
-  
-  .form-text {
-    color: #dc3545;
+
+  .Payment-focus {
     font-size: 0.875rem;
-    margin-top: 0.5rem;
   }
-  
-  /* Media Queries */
-  @media (max-width: 1200px) {
-    .card-body {
-      padding: 1.5rem;
-    }
-  
-    .form-control {
-      font-size: 0.875rem;
-    }
-  
-    .btn-primarys {
-      font-size: 0.875rem;
-      padding: 0.5rem 1rem;
-    }
-  }
-  
-  @media (max-width: 992px) {
-    .card {
-      border-radius: 10px;
-    }
-  
-    .card-body {
-      padding: 1rem;
-    }
-  
-    .form-control {
-      padding: 0.5rem;
-    }
-  
-    .btn-primarys {
-      font-size: 0.875rem;
-      padding: 0.5rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .card-body {
-      padding: 0.75rem;
-    }
-  
-    .form-control {
-      font-size: 0.75rem;
-      padding: 0.5rem;
-    }
-  
-    .btn-primarys {
-      font-size: 0.75rem;
-      padding: 0.5rem;
-    }
-  
-    .form-text {
-      font-size: 0.75rem;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .card-body {
-      padding: 0.5rem;
-    }
-  
-    .form-control {
-      font-size: 0.75rem;
-      padding: 0.5rem;
-    }
-  
-    .btn-primarys {
-      font-size: 0.75rem;
-      padding: 0.5rem;
-    }
-  
-    .form-text {
-      font-size: 0.75rem;
-    }
-  }
-  
 
-  /* src/components/Payment.css */
-.payment-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f7f7f7;
+  .Payment-button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
-.payment-button {
-  background-color: #3399cc;
-  color: #fff;
-  border: none;
-  padding: 15px 30px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+@media (max-width: 992px) {
+  .Payment {
+    border-radius: 10px;
+  }
+
+  .payment {
+    padding: 1rem;
+  }
+
+  .Payment-focus{
+    padding: 0.5rem;
+  }
+
+  .Payment-button {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
-.payment-button:hover {
-  background-color: #2874a6;
+@media (max-width: 768px) {
+  .payment {
+    padding: 0.75rem;
+  }
+
+  .Payment-focus {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .Payment-button {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  #formPrice,
+  #formDiscount,
+  #formFinalPrice {
+    font-size: 1rem;
+  }
+
+  
 }
 
-.payment-button:active {
-  background-color: #1c6ea4;
+@media (max-width: 576px) {
+  .payment {
+    padding: 0.5rem;
+  }
+
+  .Payment-focus {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .Payment-button {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  #formPrice,
+  #formDiscount,
+  #formFinalPrice {
+    font-size: 0.875rem;
+  }
+
+  .form-text {
+    font-size: 0.75rem;
+  }
 }

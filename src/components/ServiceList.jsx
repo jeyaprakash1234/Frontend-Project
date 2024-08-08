@@ -52,7 +52,12 @@ function ServiceList() {
       const newBooking = { name,  phone, service,time,date ,pincode,address};
       try {
         await axios.post('https://backend-project-2-cbk8.onrender.com/booking/bookingdata', newBooking);
-        alert('Booking successful!');
+       
+        Swal.fire({
+          title: "Good job!",
+          text: "You clicked the button!",
+          icon: "success"
+        });
 
         navigate('/services');
         setName('');
@@ -68,16 +73,7 @@ function ServiceList() {
       }
     };
 
-    //sweetalert
-    const handleClick = ()=>{
-       
-      Swal.fire({
-        title: "Good job!",
-        text: "You clicked the button!",
-        icon: "success"
-      });
-      
-    }
+  
    
     
     
@@ -153,10 +149,6 @@ function ServiceList() {
       service.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
     
-
-
-   
-
 
     return (
        
@@ -247,7 +239,7 @@ function ServiceList() {
               <label htmlFor="time">Time</label>
               <input type="text" id="time" name="time" value={time} onChange={(e)=>setTime(e.target.value)}required />
             </div>
-            <button type="submit" className="submit-button" onClick={handleClick}>Submit</button>
+            <button type="submit" className="submit-button" >Submit</button>
             <button type="button" className="close-button" onClick={handleCloseForm}>Close</button>
           </form>
         </div>

@@ -10,7 +10,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
+import Swal from 'sweetalert2';
 
 
 
@@ -31,7 +31,11 @@ function LoginForm  () {
         const response = await axios.post('https://backend-project-2-cbk8.onrender.com/api/auth/login', { email, password });
         if(response.status === 200  ) {
             navigate('/')
-            alert('login successfully!');
+            Swal.fire({
+                title: "Good job!",
+                text: "You clicked the button!",
+                icon: "success"
+              });
          
          
         } else {
