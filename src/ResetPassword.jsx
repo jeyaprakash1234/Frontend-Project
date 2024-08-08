@@ -31,6 +31,7 @@ function ResetPassword  () {
       try {
         const response = await axios.post(`https://backend-project-2-cbk8.onrender.com/api/auth/reset-password/${id}/${token}`, { password });
         if(response.status === 200  ) {
+            alert('Reset successfully')
             navigate('/login')
             
          
