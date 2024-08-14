@@ -70,7 +70,7 @@ const [termsAccepted, setTermsAccepted] = useState(false);
       e.preventDefault();
       const newBooking = { name,  phone, service,email,date ,pincode,address};
       try {
-        await axios.post('http://localhost:5000/api/booking/bookingdata', newBooking);
+        await axios.post('https://backend-project-2-cbk8.onrender.com/api/booking/bookingdata', newBooking);
         setName('');
         setPincode('');
         setEmail('');
