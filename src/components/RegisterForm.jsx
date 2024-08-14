@@ -82,20 +82,20 @@ function RegisterForm  ()  {
                     {formik => (
                         <Form onSubmit={handleSubmit} >
                             <div className="form-group">
-                                <label htmlFor="name"><FaRegUser size={20} color="#E1306C" /></label>
+                                <label htmlFor="name"><FaRegUser size={30} color="#E1306C" /></label>
                                 <Field type="text" id="name" placeholder="Name" name="name"className="form-control"  value={name} onChange={(e) => setName(e.target.value)} required />
                                 <ErrorMessage name="name" component="div" className="error-message" />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="email"><MdEmail size={20} color="#E1306C" /></label>
+                                <label htmlFor="email"><MdEmail size={30} color="#E1306C" /></label>
                                 <Field type="email" id="email" placeholder="Email" name="email" className="form-control"  value={email} onChange={(e) => setEmail(e.target.value)} required />
                                 <ErrorMessage name="email" component="div" className="error-message" />
                             </div>
 
                             <div className="form-group">
-                            <RiLockPasswordFill size={20}color="#E1306C"/>
-                                <label htmlFor="password"> </label>
+                            
+                                <label htmlFor="password">  <RiLockPasswordFill size={30}color="#E1306C"/></label>
                                 <Field type="password"id="password" name="password" className="form-control" placeholder="min. 10 characters" value={password} onChange={(e) => setPassword(e.target.value)} required />
                                 <ErrorMessage name="password" component="div" className="error-message" />
                             </div>
