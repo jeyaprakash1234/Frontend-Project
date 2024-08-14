@@ -9,7 +9,7 @@ import stitchings from  '../assets/images/stitchings.jpg';
 import house from '../assets/images/housekeeping.jpg';
 import Menu from './Menu';
 import { useNavigate } from 'react-router-dom';
-import 'react-calendar/dist/Calendar.css';
+
 import TermsAndConditionsModal from './TermsAndConditionsModal';
 import axios from 'axios';
 import Swal from 'sweetalert2';
