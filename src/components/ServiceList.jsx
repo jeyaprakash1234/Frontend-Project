@@ -242,34 +242,34 @@ const [termsAccepted, setTermsAccepted] = useState(false);
         <div className="booking-form">
           <h2>Book {selectedService}</h2>
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="name">Name</label>
               <input type="text" id="name" name="name" value={name} onChange={(e)=>setName(e.target.value)}required />
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="time">email </label>
              
 
               <input type="text" id="email" name="email"  value={email} onChange={(e)=>setEmail(e.target.value)}required  />
 
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="service">service  </label>
               <input type="text" id="service" name="service" value={service} onChange={(e)=>setService(e.target.value)}required />
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="phone">Phone Number </label>
               <input type="text" id="phone" name="phone" value={phone} onChange={(e)=>setPhone(e.target.value)}required />
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="address">Address </label>
               <input type="text" id="address" name="address"  value={address} onChange={(e)=>setAddress(e.target.value)}required/>
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="pincode">Pincode</label>
               <input type="text" id="pincode" name="pincode" value={pincode} onChange={(e)=>setPincode(e.target.value)}required />
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="date"> Choose a date: </label>
               <input type="text" id="date" name="date" value={date} onChange={(e)=>setDate(e.target.value)}required />
              

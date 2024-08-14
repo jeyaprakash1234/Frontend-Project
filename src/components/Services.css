@@ -135,16 +135,16 @@
   
 }
 
-.form-group {
+.form-group1 {
   margin-bottom: 15px;
 }
 
-.form-group label {
+.form-group1 label {
   display: block;
   margin-bottom: -10px;
 }
 
-.form-group input {
+.form-group1 input {
   width: calc(100% - 20px);
   padding: 10px;
   border: 1px solid #ddd;
