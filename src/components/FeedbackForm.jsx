@@ -30,7 +30,7 @@ const FeedbackForm = ({ onSubmit }) => {
     
 
     try {
-      await axios.post('http://localhost:5000/api/feedback', {rating,comments });
+      await axios.post('https://backend-project-2-cbk8.onrender.com/api/feedback', {rating,comments });
       setSubmitted(true);
       onSubmit(); 
       Swal.fire({
