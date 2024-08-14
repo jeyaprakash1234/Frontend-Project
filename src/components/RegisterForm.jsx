@@ -7,7 +7,9 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { MdEmail } from "react-icons/md";
+import { FaRegUser } from "react-icons/fa";
+import { RiLockPasswordFill } from "react-icons/ri";
 
 
 
@@ -43,8 +45,6 @@ function RegisterForm  ()  {
       } else{
         console.log("error");
       }
-      
-
       
     } catch (error) {
       toast.error('There was an error!', error);
@@ -82,19 +82,20 @@ function RegisterForm  ()  {
                     {formik => (
                         <Form onSubmit={handleSubmit} >
                             <div className="form-group">
-                                <label htmlFor="name">Name</label>
-                                <Field type="text" id="name" name="name"className="form-control"  value={name} onChange={(e) => setName(e.target.value)} required />
+                                <label htmlFor="name"><FaRegUser size={20} color="#E1306C" /></label>
+                                <Field type="text" id="name" placeholder="Name" name="name"className="form-control"  value={name} onChange={(e) => setName(e.target.value)} required />
                                 <ErrorMessage name="name" component="div" className="error-message" />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <Field type="email" id="email"  name="email" className="form-control"  value={email} onChange={(e) => setEmail(e.target.value)} required />
+                                <label htmlFor="email"><MdEmail size={20} color="#E1306C" /></label>
+                                <Field type="email" id="email" placeholder="Email" name="email" className="form-control"  value={email} onChange={(e) => setEmail(e.target.value)} required />
                                 <ErrorMessage name="email" component="div" className="error-message" />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="password">Password</label>
+                            <RiLockPasswordFill size={20}color="#E1306C"/>
+                                <label htmlFor="password"> </label>
                                 <Field type="password"id="password" name="password" className="form-control" placeholder="min. 10 characters" value={password} onChange={(e) => setPassword(e.target.value)} required />
                                 <ErrorMessage name="password" component="div" className="error-message" />
                             </div>

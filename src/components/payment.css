@@ -3,23 +3,56 @@
 
 .payment {
   padding: 2rem;
+  
+ 
+  
+  
 }
 
 .Payment-title {
-  color: #343a40;
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-top: 0;
 }
 
-.Payment2 {
-  margin-bottom: 1.5rem;
+.Payment12 {
+  font-weight: bold;
+  color: #000;
+}
+
+/* Discount text styling */
+.Payment13 {
+  color: #e67e22;
+  font-weight: bold;
+}
+
+/* Final price text styling */
+.Payment14 {
+  color: #e74c3c;
+  font-weight: bold;
 }
 
 .Payment-focus {
-  border-radius: 10px;
+  /* border-radius: 10px;
   border: 1px solid #ced4da;
   padding: 0.75rem 1.25rem;
-  font-size: 1rem;
+  font-size: 1rem; */
+  width: 100%;
+    padding: 8px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
 }
 
 .Payment-focus:focus {
@@ -27,13 +60,17 @@
   box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
 }
 
+
 .Payment-button {
   background-color: #28a745;
   border-color: #28a745;
   border-radius: 10px;
-  padding: 0.75rem 1.25rem;
+  padding: 10px 20px;
   font-size: 1.2rem;
   font-weight: bold;
+  width: 150px;
+  height: 45px;
+  margin: 1px auto 0;
 }
 
 .Payment-button:hover {
@@ -41,6 +78,29 @@
   border-color: #1e7e34;
 }
 
+label {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Input field styling */
+input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+  border-color: #66afe9;
+  outline: none;
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
 
 
 /* Price Details Styles */

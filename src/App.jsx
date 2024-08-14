@@ -12,7 +12,8 @@ import logo from './assets/images/logo.png';
 
 // import porfile  from './assets/images/profile.png'
 
-
+import AdminLogin from './Admin/AdminLogin';
+import Adminpanels from './Admin/Adminpanel';
 import PaymentForm from './components/PaymentPage';
 import ForgotPasswords from './ForgotPassword';
 import ResetPasswords from './ResetPassword';
@@ -55,7 +56,10 @@ function App() {
 
                
             </Navbar>  
+
+          
             <Container className="my-4"> 
+
                
                 <Routes>
                      <Route path="/" element={<Home />} />
@@ -65,10 +69,12 @@ function App() {
                  
                  <Route path="/payment" element={<PaymentForm />} />  
                  <Route path="/forgot-password" element={<ForgotPasswords />} />
+                 <Route path="/admin" element={<AdminLogin />} />
+                 <Route path="/admin-panel" element={<Adminpanels />} />
                  <Route path="/resetpassword/:id/:token" element={<ResetPasswords />} />   
                  
                  
-                   
+                  
               
 
                    

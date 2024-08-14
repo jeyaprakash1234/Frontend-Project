@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { Container, Button } from 'react-bootstrap';
 
 import { Link, useNavigate } from 'react-router-dom';
-
+import { MdEmail } from "react-icons/md";
 
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
@@ -69,8 +69,8 @@ function ForgotPassword  () {
                     {formik => (
                         <Form onSubmit={handleSubmit} >
                             <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <Field type="email" id="name" className="form-control" value={email} onChange={(e)=>setEmail(e.target.value)}required />
+                                <label htmlFor="email">  <MdEmail size={30} color="#E1306C" /></label>
+                                <Field type="email" id="name" placeholder="Enter Email" className="form-control" value={email} onChange={(e)=>setEmail(e.target.value)}required />
                                 <ErrorMessage name="email" component="div" className="error-message" />
                             </div>
 

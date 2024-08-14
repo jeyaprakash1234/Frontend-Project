@@ -1,0 +1,148 @@
+.login-form-container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #f0f0f0; */
+  }
+  
+  .login-form1 {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300%;
+  }
+  
+  .login-form1 h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-button1 {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-button1:hover {
+    background-color: #0056b3;
+  }
+  
+  .admin-panel {
+    text-align: center;
+    font-size: 24px;
+    color: green;
+  }
+  
+  .admin-panel {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+}
+
+
+.container {
+    padding-top: 20px;
+}
+
+h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.list-group-item {
+    border: none;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.btn-primary, .btn-danger {
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover, .btn-danger:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.modal-header, .modal-footer {
+    border: none;
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+textarea {
+    margin-top: 10px;
+    resize: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.close {
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.close:hover {
+    color: #000;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .modal-title {
+        font-size: 1rem;
+    }
+
+    .list-group-item {
+        padding: 15px;
+    }
+}
+
+.modal.fade .modal-dialog {
+  -webkit-transform: translate(0, -50px);
+  transform: translate(0, -50px);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+.modal.show .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}

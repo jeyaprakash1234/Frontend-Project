@@ -108,14 +108,15 @@
 
 
 .booking-form {
-  position: fixed;
+ position: fixed;
   top: 50%;
+
   left: 50%;
   width: 80%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  /* background-color: white; */
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
@@ -130,7 +131,8 @@
 }
 
 .booking-form h2 {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  
 }
 
 .form-group {
@@ -139,26 +141,38 @@
 
 .form-group label {
   display: block;
-  margin-bottom: 2px;
+  margin-bottom: -10px;
 }
 
 .form-group input {
   width: calc(100% - 20px);
-  padding: 5px;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
+.button-container {
+  display: flex; /* Use flexbox to align items horizontally */
+  justify-content: space-between; /* Space out the buttons evenly */
+  margin-top: 20px; /* Add some space above the buttons */
+}
 
-.submit-button {
-  background-color: #6a5acd;
+.button-container .btn {
+  width: 48%; /* Ensure buttons take up equal width */
+}
+
+
+.super {
+  background-color: #6150ce;
+  display: flex;
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-left: 10px;
 }
 
-.submit-button:hover {
+.super:hover {
   background-color: #5a4cb0;
 }
 
@@ -196,7 +210,7 @@
   
   @media (max-width: 767px) {
     .service-card,.offer-card {
-      width: 90%;
+      width: 80%;
     }
     .offer-card, .service-card:hover {
       transform: scale(1.05); /* Slightly increase size */
@@ -232,6 +246,43 @@
       width: 80%;
     }
   }
+
+  /*-----------searchbar----------------------------*/
+  
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+
+.search-container input[type="text"] {
+  width: 60%; 
+  max-width: 600px; 
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 2px solid #3498db;
+  font-size: 16px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+
+.search-container input[type="text"]:focus {
+  border-color: #2980b9;
+  outline: none;
+  box-shadow: 0px 0px 8px rgba(41, 128, 185, 0.6);
+}
+
+
+@media screen and (max-width: 768px) {
+  .search-container input[type="text"] {
+      width: 80%; 
+      font-size: 14px;
+      padding: 8px 12px;
+  }
+}
 
   
   

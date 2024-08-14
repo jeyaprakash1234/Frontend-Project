@@ -54,6 +54,12 @@ body {
   .menu-icon {
     font-size: 1.5rem;
     cursor: pointer;
+    gap: 30px;
+  }
+  .notify-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    
   }
   
   .menu-links {
@@ -181,8 +187,9 @@ body {
   .form-container {
     max-width: 600px;
     margin: auto;
-    padding: 20px;
-    background-color: rgba(255, 252, 252, 0.9);
+    padding: 40px;
+  
+    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     animation: fadeIn 1s ease-in-out;
@@ -191,13 +198,14 @@ body {
   .form-title {
     font-size: 2rem;
     font-weight: bold;
-    color: #343a40;
+    
     text-align: center;
     margin-bottom: 20px;
+    color: #E1306C;
   }
   
   .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   
   .form-control {
@@ -206,6 +214,17 @@ body {
     border-radius: 4px;
     border: 1px solid #5b5050;
   } 
+  .form-group label {
+   
+    
+    top: 50%;
+    
+    
+   
+   
+    
+   
+} 
   
   .error-message {
     color: red;
@@ -329,7 +348,7 @@ body {
   
   @media (min-width: 768px) and (max-width: 1024px) {
     .service-card {
-      width: 45%;
+      width: 100%;
     }
   }
   @media (max-width: 767px) {
@@ -356,31 +375,10 @@ body {
     background-color: #ffffff; 
     padding: 20px 0px; 
   }
-  @media (max-width: 767px) {
-    .register-form-container{
-      background-size: cover;
-      
-    }
-
-    .register-form {
-      width: 80%;
-     
-     
-    }
-  }
   
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .register-form-container {
-      background-size: cover;
-      width: 90%;
-    }
-  
-    
-  }
 
 
-  .search-bar {
+  /* .search-bar {
     display: flex;
     align-items: center;
     margin: 20px;
@@ -397,7 +395,7 @@ body {
   
   .search-bar button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #3c73af;
     color: white;
     border: none;
     border-radius: 4px;
@@ -405,5 +403,5 @@ body {
   }
   
   .search-bar button:hover {
-    background-color: #0056b3;
-  }
+    background-color: #2c6eb4;
+  } */

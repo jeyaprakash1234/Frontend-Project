@@ -10,23 +10,42 @@ import house from '../assets/images/housekeeping.jpg';
 import Menu from './Menu';
 import { useNavigate } from 'react-router-dom';
 import 'react-calendar/dist/Calendar.css';
-
-
+import TermsAndConditionsModal from './TermsAndConditionsModal';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-// import { useNavigate } from 'react-router-dom';
 
-function ServiceList() {
+
+function ServiceList()  {
 
   
+const navigate =useNavigate('')
+
+//terms
+const [termsAccepted, setTermsAccepted] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setTermsAccepted(!termsAccepted);
+  };
   
 
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
+
+  //booking form
     const [showBookingForm, setShowBookingForm] = useState(false);
      const [selectedService, setSelectedService] = useState(null);
   
      const handleBookClick = (service) => {
+      const isAuthenticated =localStorage.getItem('authToken');
+      if(!isAuthenticated){
+        alert('Please login to proceed with booking')
+        navigate('/login')
+      }else{
        setSelectedService(service);
       setShowBookingForm(true);
+      }
     };
   
     const handleCloseForm = () => {
@@ -40,39 +59,46 @@ function ServiceList() {
     const [name, setName] = useState('');
     const [pincode , setPincode ] = useState('');
     const [date , setDate]=useState('');
-    const [time, setTime] =useState('');
+    const [email, setEmail] =useState('');
     
       
     
-     const navigate = useNavigate();    
+    
 
   
     const handleSubmit = async (e) => {
       e.preventDefault();
-      const newBooking = { name,  phone, service,time,date ,pincode,address};
+      const newBooking = { name,  phone, service,email,date ,pincode,address};
       try {
-        await axios.post('https://backend-project-2-cbk8.onrender.com/api/booking/bookingdata', newBooking);
+        await axios.post('http://localhost:5000/api/booking/bookingdata', newBooking);
         setName('');
         setPincode('');
-        setTime('');
+        setEmail('');
         setDate('');
         setPhone('');
         setAddress('');
         setService('');
+       
+
 
         Swal.fire({
           title: "Good job!",
           text: "Booking successfully!",
           icon: "success"
         });
+        setShowBookingForm(false);
 
-        navigate('/services');
+        
         
       } catch (err) {
         toast.error('Error creating booking');
       }
     };
 
+   
+    
+
+    
   
    
     
@@ -138,6 +164,11 @@ function ServiceList() {
         }
     ];
 
+    
+
+    
+    
+
     /// searchbar
     const [searchQuery, setSearchQuery] = useState('');
 
@@ -159,7 +190,7 @@ function ServiceList() {
             <div className={`services ${showBookingForm ? 'blurred' : ''}`}> 
             
             <h2 className="text-center my-5">Our Services</h2>
-           <div className="search-bar">
+           <div className="search-container">
              <input  type="text" placeholder="Search here..." value={searchQuery} onChange={handleSearchChange} className='search-bar'/>
              </div>
             <Row>
@@ -216,15 +247,22 @@ function ServiceList() {
               <input type="text" id="name" name="name" value={name} onChange={(e)=>setName(e.target.value)}required />
             </div>
             <div className="form-group">
-              <label htmlFor="service">service</label>
+              <label htmlFor="time">email </label>
+             
+
+              <input type="text" id="email" name="email"  value={email} onChange={(e)=>setEmail(e.target.value)}required  />
+
+            </div>
+            <div className="form-group">
+              <label htmlFor="service">service  </label>
               <input type="text" id="service" name="service" value={service} onChange={(e)=>setService(e.target.value)}required />
             </div>
             <div className="form-group">
-              <label htmlFor="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" value={phone} onChange={(e)=>setPhone(e.target.value)}required />
+              <label htmlFor="phone">Phone Number </label>
+              <input type="text" id="phone" name="phone" value={phone} onChange={(e)=>setPhone(e.target.value)}required />
             </div>
             <div className="form-group">
-              <label htmlFor="address">Address</label>
+              <label htmlFor="address">Address </label>
               <input type="text" id="address" name="address"  value={address} onChange={(e)=>setAddress(e.target.value)}required/>
             </div>
             <div className="form-group">
@@ -232,15 +270,36 @@ function ServiceList() {
               <input type="text" id="pincode" name="pincode" value={pincode} onChange={(e)=>setPincode(e.target.value)}required />
             </div>
             <div className="form-group">
-              <label htmlFor="date">Date</label>
+              <label htmlFor="date"> Choose a date: </label>
               <input type="text" id="date" name="date" value={date} onChange={(e)=>setDate(e.target.value)}required />
+             
             </div>
-            <div className="form-group">
-              <label htmlFor="time">Time</label>
-              <input type="text" id="time" name="time" value={time} onChange={(e)=>setTime(e.target.value)}required />
-            </div>
-            <button type="submit" className="submit-button" >Submit</button>
+
+           
+            <div className="terms-and-conditions">
+        <input
+          type="checkbox"
+          id="terms"
+          name="terms"
+          checked={termsAccepted}
+          onChange={handleCheckboxChange}
+        />
+        <label htmlFor="terms">
+          I agree to the{' '}
+          <span
+            className="terms-link"
+            onClick={handleShowModal}
+            style={{ color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}
+          >
+            Terms and Conditions
+          </span>
+        </label>
+      </div>
+      <div className="button-container">
+            <button type="submit"  disabled={!termsAccepted}className="super" >Submit</button>
             <button type="button" className="close-button" onClick={handleCloseForm}>Close</button>
+               </div>
+      <TermsAndConditionsModal show={showModal} handleClose={handleCloseModal} />
           </form>
         </div>
         </>

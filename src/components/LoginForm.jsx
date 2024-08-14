@@ -4,6 +4,10 @@ import * as Yup from 'yup';
 import { Container, Button } from 'react-bootstrap';
 import './LoginForm.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { MdEmail } from "react-icons/md";
+
+import { RiLockPasswordFill } from "react-icons/ri";
+
 
 import Menu from './Menu';
 import axios from 'axios';
@@ -29,6 +33,7 @@ function LoginForm  () {
 
       try {
         const response = await axios.post('https://backend-project-2-cbk8.onrender.com/api/auth/login', { email, password });
+
         if(response.status === 200  ) {
            
             Swal.fire({
@@ -37,12 +42,18 @@ function LoginForm  () {
                 icon: "success"
               });
               navigate('/')
+              localStorage.setItem('authToken', response.data.token);
          
         } else {
           alert(response.data.Error);
         }
       } catch (error) {
-        toast.error('There was an error!', error);
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "check your Email or password!",
+          
+          });
       }
     };
    
@@ -63,7 +74,7 @@ function LoginForm  () {
     };
 
     return (
-        <div className="login-form-container">
+        <div className="login-form-contain">
             <Menu/>
             <ToastContainer/>
             <Container className="form-container">
@@ -72,14 +83,16 @@ function LoginForm  () {
                     {formik => (
                         <Form onSubmit={handleSubmit} >
                             <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <Field type="email" id="name" className="form-control" value={email} onChange={(e)=>setEmail(e.target.value)}required />
+                           
+                                <label htmlFor="email">  <MdEmail size={25} color="#E1306C"  /></label>
+                                <Field type="email" placeholder="Enter Email" id="email"className="form-control" value={email} onChange={(e)=>setEmail(e.target.value)}required />
                                 <ErrorMessage name="email" component="div" className="error-message" />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="password">Password</label>
-                                <Field type="password" id="name"  name="password"  className="form-control"value={password} onChange={(e)=>setPassword(e.target.value)}required />
+                           
+                                <label htmlFor="password"> <RiLockPasswordFill size={25}color="#E1306C"/></label>
+                                <Field type="password" id="name" placeholder="Enter Password" name="password"  className="form-control"value={password} onChange={(e)=>setPassword(e.target.value)}required />
                                 <ErrorMessage name="password" component="div" className="error-message" />
                             </div>
                             <div className="register-link">

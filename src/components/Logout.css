@@ -1,0 +1,14 @@
+ .logout-button {
+    background-color: transparent; /* Ensure background matches other items */
+    border: none; /* Remove any borders */
+    color: #fff; /* Match text color */
+    cursor: pointer;
+    padding: 0; /* Remove default button padding */
+    margin: 0; /* Remove default button margin */
+    text-align: left; /* Align text with other items */
+    width: 100%;
+    display: block; /* Ensure it behaves like a list item */
+}
+ .logout-button:hover {
+    background-color: #555; /* Same hover effect as other items */
+}

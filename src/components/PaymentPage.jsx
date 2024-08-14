@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
+import {  Row, Col, Form,  Card } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import './payment.css';
-
+import FeedbackForm from './FeedbackForm';
 function PaymentPage () {
 
 
@@ -48,7 +48,7 @@ function PaymentPage () {
 
   const finalPrice = calculateFinalPrice();
 
-  
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
 
 
   const [amount, setAmount]= useState('')
@@ -67,12 +67,7 @@ function PaymentPage () {
         name:"laundry payment",
         description:"for testing purpose",
         handler: function(){
-          Swal.fire({
-            title: "payment successfully!",
-            text: "You clicked the button!",
-            icon: "success"
-          });
-          
+          setPaymentSuccess(true);
 
         },
         prefill:{
@@ -114,11 +109,11 @@ function PaymentPage () {
                 </Form.Control>
               </Form.Group>
 
-              <Form.Group className='Payment2' controlId="formPrice">
+              <Form.Group className='Payment12' controlId="formPrice">
                 <Form.Label>Price: Rs:{selectedProduct.price}</Form.Label>
               </Form.Group>
 
-              <Form.Group className='Payment2' controlId="formDiscount">
+              <Form.Group className='Payment13' controlId="formDiscount">
                 <Form.Label>Discount: {selectedProduct.discount}%</Form.Label>
               </Form.Group>
               {selectedProduct.name === 'Housekeeping Service' && (
@@ -136,7 +131,7 @@ function PaymentPage () {
                 </Form.Group>
               )}
 
-              <Form.Group  className="Payment2"controlId="formFinalPrice" >
+              <Form.Group  className="Payment14"controlId="formFinalPrice" >
                 <Form.Label >Final Price to Pay: Rs:{finalPrice}</Form.Label>
               </Form.Group>
 
@@ -146,9 +141,13 @@ function PaymentPage () {
               <input type="text" placeholder='Enter amount ' className='Payment3' value={amount} onChange={(e)=>setAmount(e.target.value)}/>
               
               </Card.Body>
+
+              {!paymentSuccess ?(
               <button className='Payment-button' onClick={handleSubmit}> Pay</button>
 
-
+            ):(
+              <FeedbackForm onSubmit={() => setPaymentSuccess(false)} />
+            )}
               </Card>
         </Col>
       </Row>

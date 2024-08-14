@@ -1,0 +1,131 @@
+.admin-panel {
+    max-width: 1350px;
+    margin: auto;
+    /* background-color: #f9f9f9; */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-panel h2 {
+    font-family: 'Arial, sans-serif';
+    font-weight: bold;
+    color: #343a40;
+}
+
+.admin-panel h4 {
+    font-family: 'Arial, sans-serif';
+    color: #6c757d;
+}
+
+.table {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.table th {
+    background-color: #343a40;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+
+.button {
+    margin-right: 10px;
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.modal-title {
+    font-family: 'Arial, sans-serif';
+    font-weight: bold;
+}
+
+.modal-footer .btn {
+    width: 100px;
+    border-radius: 5px;
+}
+
+.toast-container .Toastify__toast {
+    border-radius: 10px;
+    font-family: 'Arial, sans-serif';
+}
+
+
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search-bar .form-control input[type="text"] {
+    border-radius: 0;
+    border-color: #ced4da;
+    width: 60%; 
+  max-width: 600px; 
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 2px solid #3498db;
+  font-size: 16px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.search-bar .input-group {
+    margin-bottom: 10px;
+}
+
+
+/* AdminPanel.css */
+.admin-panel {
+    padding: 20px;
+}
+
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-6 {
+    flex: 1;
+    margin: 10px;
+}
+
+.table {
+    margin-bottom: 20px;
+}
+
+h4.text-primary {
+    color: #007bff;
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-footer {
+    background-color: #f1f1f1;
+}
