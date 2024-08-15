@@ -45,6 +45,11 @@ function ResetPassword  () {
     };
    
 
+    const [passwordShown, setPasswordShown] = useState(false);
+
+    const togglePasswordVisibility = () => {
+      setPasswordShown(!passwordShown);
+    };
   
     // const initialValues = {
     //     email: '',
@@ -69,9 +74,16 @@ function ResetPassword  () {
                 <Formik onSubmit={onSubmit} >
                     {formik => (
                         <Form onSubmit={handleSubmit} >
-                            <div className="form-group">
+                            <div className="password-input-container">
                                 <label htmlFor="password">New password</label>
-                                <Field type="password" id="password" className="form-control" placeholder="min 10 " value={password} onChange={(e)=>setPassword(e.target.value)}required />
+                                <Field type={passwordShown ? "text" : "password"} id="password" className="form-control" placeholder="min 10 " value={password} onChange={(e)=>setPassword(e.target.value)}required />
+                                <button
+                                      type="button"
+                                         className="password-toggle-btn"
+                                        onClick={togglePasswordVisibility}
+                                          >
+                                  {passwordShown ? <FaEyeSlash /> : <FaEye />}
+                                                           </button>
                                 <ErrorMessage name="password" component="div" className="error-message" />
                             </div>
 
