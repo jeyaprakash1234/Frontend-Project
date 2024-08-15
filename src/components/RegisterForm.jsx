@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { MdEmail } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
-
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 
 
@@ -71,6 +71,11 @@ function RegisterForm  ()  {
         console.log('Form data', values);
     };
 
+    const [passwordShown, setPasswordShown] = useState(false);
+
+    const togglePasswordVisibility = () => {
+      setPasswordShown(!passwordShown);
+    };
 
     return (
         <div className="register-form-container">
@@ -96,7 +101,14 @@ function RegisterForm  ()  {
                             <div className="form-group">
                             
                                 <label htmlFor="password">  <RiLockPasswordFill size={30}color="#E1306C"/></label>
-                                <Field type="password"id="password" name="password" className="form-control" placeholder="min. 10 characters" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                                <Field type={passwordShown ? "text" : "password"} id="password" name="password" className="form-control" placeholder="min. 10 characters" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                                <button
+                                      type="button"
+                                         className="password-toggle-btn"
+                                        onClick={togglePasswordVisibility}
+                                          >
+                                  {passwordShown ? <FaEyeSlash /> : <FaEye />}
+                                                           </button>
                                 <ErrorMessage name="password" component="div" className="error-message" />
                             </div>
 
