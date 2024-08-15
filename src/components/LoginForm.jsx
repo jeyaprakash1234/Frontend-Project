@@ -95,10 +95,10 @@ function LoginForm  () {
                                 <ErrorMessage name="email" component="div" className="error-message" />
                             </div>
 
-                            <div className="form-group">
+                            <div className="password-input-container">
                            
                                 <label htmlFor="password"> <RiLockPasswordFill size={25}color="#E1306C"/></label>
-                                <Field type={passwordShown ? "text" : "password"} id="name" placeholder="Enter Password" name="password"  className="form-control"value={password} onChange={(e)=>setPassword(e.target.value)}required />
+                                <Field type={passwordShown ? "text" : "password"} id="name" placeholder="Enter Password" name="password"  className="form-control"value={password} onChange={(e)=>setPassword(e.target.value)}required   />
                                 <button
                                       type="button"
                                          className="password-toggle-btn"

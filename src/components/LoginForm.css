@@ -214,7 +214,7 @@ html, body {
     }
   }
 
-  /* .password-input-container {
+  .password-input-container {
     display: flex;
     align-items: center;
     position: relative;
@@ -223,7 +223,7 @@ html, body {
     border-radius: 4px;
     padding: 0.5rem;
     background-color: #fff;
-} */
+} 
 
 .password-toggle-btn {
     background: none;
