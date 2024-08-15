@@ -51,7 +51,7 @@ function LoginForm  () {
               localStorage.setItem('authToken', response.data.token);
          
         } else {
-          alert(response.data.Error);
+          toast(response.data.Error);
         }
       } catch (error) {
         Swal.fire({

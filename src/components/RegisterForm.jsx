@@ -43,6 +43,7 @@ function RegisterForm  ()  {
 
         
       } else{
+        toast('The  Mail and Name is already Use ')
         console.log("error");
       }
       
