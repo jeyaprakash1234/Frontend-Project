@@ -98,7 +98,7 @@ function RegisterForm  ()  {
                                 <ErrorMessage name="email" component="div" className="error-message" />
                             </div>
 
-                            <div className="form-group">
+                            <div className="password-input-container">
                             
                                 <label htmlFor="password">  <RiLockPasswordFill size={30}color="#E1306C"/></label>
                                 <Field type={passwordShown ? "text" : "password"} id="password" name="password" className="form-control" placeholder="min. 10 characters" value={password} onChange={(e) => setPassword(e.target.value)} required />
