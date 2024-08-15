@@ -8,7 +8,7 @@ import { MdEmail } from "react-icons/md";
 
 import { RiLockPasswordFill } from "react-icons/ri";
 
-
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import Menu from './Menu';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
@@ -23,6 +23,12 @@ import Swal from 'sweetalert2';
 
 function LoginForm  () {
     //const navigate =useNavigate();
+
+    const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordShown(!passwordShown);
+  };
     
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -92,8 +98,15 @@ function LoginForm  () {
                             <div className="form-group">
                            
                                 <label htmlFor="password"> <RiLockPasswordFill size={25}color="#E1306C"/></label>
-                                <Field type="password" id="name" placeholder="Enter Password" name="password"  className="form-control"value={password} onChange={(e)=>setPassword(e.target.value)}required />
-                                <ErrorMessage name="password" component="div" className="error-message" />
+                                <Field type={passwordShown ? "text" : "password"} id="name" placeholder="Enter Password" name="password"  className="form-control"value={password} onChange={(e)=>setPassword(e.target.value)}required />
+                                <button
+                                      type="button"
+                                         className="password-toggle-btn"
+                                        onClick={togglePasswordVisibility}
+                                          >
+                                  {passwordShown ? <FaEyeSlash /> : <FaEye />}
+                                                           </button>
+                              <ErrorMessage name="password" component="div" className="error-message" />
                             </div>
                             <div className="register-link">
                             <p>Don't have an account? <Link to="/register">Register here</Link></p>
