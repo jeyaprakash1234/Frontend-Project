@@ -172,7 +172,7 @@ function Home() {
                 </Col>
                 <Col md={6}>
                     <h3 className='jpjo'>Contact Details</h3>
-                    <p className='jo'>Email: contact@laundryservice.com</p>
+                    <p className='jo'>Email: contact@CleanEase.com</p>
                     <p className='jo'>Phone: +1 234 567 890</p>
                     <div className="social-icons">
                         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
