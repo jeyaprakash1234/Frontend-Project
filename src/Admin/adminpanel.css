@@ -129,3 +129,49 @@ h4.text-primary {
 .modal-footer {
     background-color: #f1f1f1;
 }
+
+@media (min-width: 768px) {
+    .admin-panel {
+        max-width: 750px;
+    }
+}
+
+/* Styles for tablets */
+@media (max-width: 767px) {
+    .admin-panel h2, .admin-panel h4 {
+        font-size: 1.5rem;
+    }
+
+    .table-responsive {
+        font-size: 0.9rem;
+    }
+
+    .search-bar .form-control {
+        font-size: 0.9rem;
+    }
+
+    .admin-panel .btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Styles for mobile devices */
+@media (max-width: 576px) {
+    .admin-panel h2, .admin-panel h4 {
+        font-size: 1.2rem;
+    }
+
+    .table-responsive {
+        font-size: 0.8rem;
+    }
+
+    .search-bar .form-control {
+        font-size: 0.8rem;
+    }
+
+    .admin-panel .btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
