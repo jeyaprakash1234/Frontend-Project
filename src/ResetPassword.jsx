@@ -4,8 +4,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Container, Button } from 'react-bootstrap';
 
 import {  useNavigate, useParams } from 'react-router-dom';
-
-
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import { RiLockPasswordFill } from "react-icons/ri";
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -70,12 +70,12 @@ function ResetPassword  () {
             
             <ToastContainer/>
             <Container className="form-container">
-                <h1 className="form-title">ResetPassword</h1>
+                <h1 className="form-title">Reset New Password </h1>
                 <Formik onSubmit={onSubmit} >
                     {formik => (
                         <Form onSubmit={handleSubmit} >
                             <div className="password-input-container">
-                                <label htmlFor="password">New password</label>
+                                <label htmlFor="password"><RiLockPasswordFill size={30}color="#E1306C"/></label>
                                 <Field type={passwordShown ? "text" : "password"} id="password" className="form-control" placeholder="min 10 " value={password} onChange={(e)=>setPassword(e.target.value)}required />
                                 <button
                                       type="button"
